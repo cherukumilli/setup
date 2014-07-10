@@ -14,6 +14,12 @@ source $HOME/.nvm/nvm.sh
 nvm install v0.10
 nvm use v0.10
 
+# install npm
+sudo apt-get install npm
+
+# install screen
+sudo apt-get install screen
+
 # Install jshint to allow checking of JS code within emacs
 # http://jshint.com/
 npm install -g jshint
