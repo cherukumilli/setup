@@ -1,6 +1,27 @@
 #!/bin/bash
-# Simple setup.sh for configuring Ubuntu 12.04 LTS EC2 instance
+# Simple setup.sh for configuring Ubuntu 14.04 LTS development environment
 # for headless setup. 
+
+echo "The script will install the following:"
+echo "1. Oracle JDK 6 and 7 because OpenJDK has intermittent performance issues"
+echo "2. git"
+echo "3. curl"
+echo "4. nvm"
+echo "5. npm"
+echo "6. screen"
+echo "7. jshint"
+echo "8. rlwrap"
+echo "9. emacs and its addons"
+echo "10. Heroku toolbelt"
+echo "11. Standard config files"
+read -p "Press [Enter] key to continue or [Cancel] to quit"
+
+# Install Oracle JDK 6 and 7 because OpenJDK has intermittent performance issues"
+sudo apt-get install python-software-properties
+sudo add-apt-repository ppa:webupd8team/java
+sudo apt-get update
+sudo apt-get install oracle-java6-installer # install oracle jdk 6
+sudo apt-get install oracle-java7-installer # install oracle jdk 7
 
 # Install nvm: node-version manager
 # https://github.com/creationix/nvm
@@ -53,3 +74,7 @@ ln -sb dotfiles/.bashrc .
 ln -sb dotfiles/.bashrc_custom .
 ln -sf dotfiles/.emacs.d .
 
+echo "Please select the latest oracle java version from the list below (openjdk has problems)"
+read -p "Press [Enter] key to continue"
+sudo update-alternatives --config java
+sudo update-alternatives --config javac
