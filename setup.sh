@@ -108,7 +108,7 @@ echo "*****************************************************************"
 sudo apt-get install build-essential git libgnome-keyring-dev
 git clone https://github.com/atom/atom
 cd atom
-script/build # Creates application at $TMPDIR/atom-build/Atom
+sudo script/build # Creates application at $TMPDIR/atom-build/Atom
 sudo script/grunt install # Installs command to /usr/local/bin/atom
-script/grunt mkdeb # Generates a .deb package at $TMPDIR/atom-build, e.g. /tmp/atom-build
+sudo script/grunt mkdeb # Generates a .deb package at $TMPDIR/atom-build, e.g. /tmp/atom-build
 atom #launch the atom text editor
