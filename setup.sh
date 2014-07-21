@@ -2,7 +2,7 @@
 # Simple setup.sh for configuring Ubuntu 14.04 LTS development environment
 # for headless setup.
 
-echo "The script will install the following:"
+echo "The script will install or update(if needed) the following:"
 echo "1. Oracle JDK 6 and 7 because OpenJDK has intermittent performance issues"
 echo "2. git"
 echo "3. curl"
@@ -82,6 +82,12 @@ echo "*****************************************************************"
 echo "git pull and install dotfiles as well"
 echo "*****************************************************************"
 cd $HOME
+if [ -d ./dotfiles.old/ ]; then
+    rm -rf dotfiles.old
+fi
+if [ -d .emacs.d~/ ]; then
+    rm -rf .emacs.d~
+fi
 if [ -d ./dotfiles/ ]; then
     mv dotfiles dotfiles.old
 fi
@@ -101,18 +107,6 @@ echo "*****************************************************************"
 read -p "Press [Enter] key to continue"
 sudo update-alternatives --config java
 sudo update-alternatives --config javac
-
-
-#echo "*****************************************************************"
-#echo "Install Atom Editor for HTML5 app development. (https://atom.io/)"
-#echo "*****************************************************************"
-#sudo apt-get install build-essential git libgnome-keyring-dev
-#git clone https://github.com/atom/atom
-#cd atom
-#sudo script/build # Creates application at $TMPDIR/atom-build/Atom
-#sudo script/grunt install # Installs command to /usr/local/bin/atom
-#sudo script/grunt mkdeb # Generates a .deb package at $TMPDIR/atom-build, e.g. /tmp/atom-build
-#atom #launch the atom text editor
 
 echo "*****************************************************************"
 echo "Install Brackets IDE for HTML5 app development. (brackets.io)"
