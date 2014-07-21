@@ -14,7 +14,7 @@ echo "8. rlwrap"
 echo "9. emacs and its addons"
 echo "10. Heroku toolbelt"
 echo "11. Standard config files"
-echo "12. Install the Atom editor for HTML5 app development"
+echo "12. Install the Brackets editor for HTML5 app development"
 read -p "Press [Enter] key to continue or [Cancel] to quit"
 
 echo "*****************************************************************"
@@ -102,13 +102,21 @@ read -p "Press [Enter] key to continue"
 sudo update-alternatives --config java
 sudo update-alternatives --config javac
 
+
+#echo "*****************************************************************"
+#echo "Install Atom Editor for HTML5 app development. (https://atom.io/)"
+#echo "*****************************************************************"
+#sudo apt-get install build-essential git libgnome-keyring-dev
+#git clone https://github.com/atom/atom
+#cd atom
+#sudo script/build # Creates application at $TMPDIR/atom-build/Atom
+#sudo script/grunt install # Installs command to /usr/local/bin/atom
+#sudo script/grunt mkdeb # Generates a .deb package at $TMPDIR/atom-build, e.g. /tmp/atom-build
+#atom #launch the atom text editor
+
 echo "*****************************************************************"
-echo "Install Atom Editor for HTML5 app development. (https://atom.io/)"
+echo "Install Brackets IDE for HTML5 app development. (brackets.io)"
 echo "*****************************************************************"
-sudo apt-get install build-essential git libgnome-keyring-dev
-git clone https://github.com/atom/atom
-cd atom
-sudo script/build # Creates application at $TMPDIR/atom-build/Atom
-sudo script/grunt install # Installs command to /usr/local/bin/atom
-sudo script/grunt mkdeb # Generates a .deb package at $TMPDIR/atom-build, e.g. /tmp/atom-build
-atom #launch the atom text editor
+cd $HOME/Downloads
+wget https://github.com/adobe/brackets/releases/download/release-0.41/Brackets.Release.0.41.64-bit.deb
+sudo dpkg -i Brackets.Release.0.41.64-bit.deb
