@@ -27,11 +27,21 @@ sudo apt-get install oracle-java6-installer # install oracle jdk 6
 sudo apt-get install oracle-java7-installer # install oracle jdk 7
 
 echo "*****************************************************************"
+echo "Install git"
+echo "*****************************************************************"
+sudo add-apt-repository ppa:git-core/ppa
+sudo apt-get update
+sudo apt-get install -y git
+
+echo "*****************************************************************"
+echo "Install curl"
+echo "*****************************************************************"
+sudo apt-get install -y curl
+
+echo "*****************************************************************"
 echo "Install nvm: node-version manager"
 echo "https://github.com/creationix/nvm"
 echo "*****************************************************************"
-sudo apt-get install -y git
-sudo apt-get install -y curl
 curl https://raw.githubusercontent.com/creationix/nvm/v0.10.0/install.sh | bash
 #curl https://raw.github.com/creationix/nvm/master/install.sh | sh
 
